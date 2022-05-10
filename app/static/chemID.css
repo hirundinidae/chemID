@@ -1,15 +1,18 @@
-#cards-list {
+#container {
     width: 100%;
+}
+
+#cards-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card-back {
     font-family: Helvetica, san-serif;
     font-size: 0.95rem; 
     width: 30rem;
-    height: 17rem;
     border: 1px solid black;
     margin: 1rem;
 }
