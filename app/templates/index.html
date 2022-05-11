@@ -9,24 +9,26 @@
             <p id="expand-button">Expand all content</p>
             <div id="cards-list">
                 {% for card in cards %}
-                <div class="card-back">
-                    <div class="card-photo">
-                        <img src="{{ url_for('static', filename=card.pic+'.png') }}">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-name">{{card.name}}</span>
-                        <span><i class="fa-solid fa-calendar"></i> {{card.birth.strftime("%b %d %Y")}} - {{card.death.strftime("%b %d %Y") if card.death is not none else "present"}}</span>
-                        <span>{% if card.award is not none %}<i class="fa-solid fa-medal"></i> {{card.award}}{%endif%}</span>
-                        <span>{% if card.publication is not none %}<i class="fa-solid fa-pen-to-square"></i> 
-                            {% for paper in card.publication %} 
-                            <span class="publication-span{% if not loop.first %} expand{% endif %}">{{paper}}</span>
-                            {%endfor%}
-                            {%endif%}
-                        </span>
-                        <span><i class="fa-solid fa-lightbulb"></i> {{card.contribution}}</span>
-                        <span class="expand">{{card.lContribution}}</span>
-                        <span class="summary">{% if card.unknown is not none %}<i class="fa-solid fa-question"></i> {{card.sUnknown}}{%endif%}</span>
-                        <span class="expand">{% if card.unknown is not none %}<i class="fa-solid fa-question"></i> {{card.unknown}}{%endif%}</span>
+                <div class="card">
+                    <div class="card-back">
+                        <div class="card-photo">
+                            <img src="{{ url_for('static', filename=card.pic+'.png') }}">
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">{{card.name}}</span>
+                            <span><i class="fa-solid fa-calendar"></i> {{card.birth.strftime("%b %d %Y")}} - {{card.death.strftime("%b %d %Y") if card.death is not none else "present"}}</span>
+                            <span>{% if card.award is not none %}<i class="fa-solid fa-medal"></i> {{card.award}}{%endif%}</span>
+                            <span>{% if card.publication is not none %}<i class="fa-solid fa-pen-to-square"></i>
+                                {% for paper in card.publication %}
+                                <span class="publication-span{% if not loop.first %} expand{% endif %}">{{paper}}</span>
+                                {%endfor%}
+                                {%endif%}
+                            </span>
+                            <span><i class="fa-solid fa-lightbulb"></i> {{card.contribution}}</span>
+                            <span class="expand">{{card.lContribution}}</span>
+                            <span class="summary">{% if card.unknown is not none %}<i class="fa-solid fa-question"></i> {{card.sUnknown}}{%endif%}</span>
+                            <span class="expand">{% if card.unknown is not none %}<i class="fa-solid fa-question"></i> {{card.unknown}}{%endif%}</span>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
