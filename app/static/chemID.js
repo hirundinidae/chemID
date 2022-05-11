@@ -1,11 +1,11 @@
-let cards = document.querySelectorAll(".card-info");
+let cards = document.querySelectorAll(".card-back");
 cards.forEach(button => {
     button.addEventListener("click", flip);
 });
 cards.forEach(button => {
-    button.addEventListener("mouseover", expand);
+    //button.addEventListener("mouseover", expand);
 });
-document.querySelector("#expand-button").addEventListener("click",expand2);
+document.querySelector("#expand-button").addEventListener("click",expand);
 let expands = document.querySelectorAll(".expand");
 expands.forEach(expand => {
     expand.style.display="none";
@@ -16,10 +16,6 @@ function flip() {
 }
 
 function expand() {
-    //this.classList.toggle("is-expanded");
-}
-
-function expand2() {
     cards.forEach(card => {
         card.classList.toggle("is-expanded");
         let summaries = document.querySelectorAll(".summary");
@@ -41,5 +37,4 @@ function expand2() {
         }
 
     });
-    console.log(document.querySelectorAll(".summary"));
 }

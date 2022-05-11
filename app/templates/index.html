@@ -11,7 +11,7 @@
                 {% for card in cards %}
                 <div class="card-back">
                     <div class="card-photo">
-                        <img src="https://via.placeholder.com/150">
+                        <img src="{{ url_for('static', filename=card.pic+'.png') }}">
                     </div>
                     <div class="card-info">
                         <span class="card-name">{{card.name}}</span>
