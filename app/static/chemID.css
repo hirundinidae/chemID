@@ -1,5 +1,23 @@
 #container {
+    font-family: Helvetica, san-serif;
     width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#expand-button {
+    margin: auto; 
+    width: 50%;
+    padding: 1rem;
+    text-align: center;
+    transition: .2s transform ease-in-out;
+    border: 1px solid black; 
+}
+
+#expand-button:hover {
+    transform: scale(0.9);
 }
 
 #cards-list {
@@ -10,12 +28,11 @@
 }
 
 .card-back {
-    font-family: Helvetica, san-serif;
     font-size: 0.95rem;
     width: 30rem;
     height: 15rem;
     border: 1px solid black;
-    border-radius: 15px; 
+    border-radius: 15px;
     margin: 1rem;
 }
 
@@ -35,7 +52,7 @@
     width: 6rem;
     height: 8rem;
     object-fit: cover;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .card-info {
@@ -49,7 +66,7 @@
 
 .card-info > span  {
     display: block;
-    margin-bottom: 2%; 
+    margin-bottom: 2%;
 }
 
 .is-expanded .card-name {
@@ -57,7 +74,7 @@
 }
 
 .card-name {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
 }
 
 .expand {
